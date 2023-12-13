@@ -1,0 +1,132 @@
+/****************** 网页去白边 *******************/
+*
+{
+    margin: 0;padding: 0;
+}
+
+/******************* 导航栏 *********************/
+.header{
+    width: 100%;
+    height: 60px;
+    /* 使用flex布局 */
+    display: flex;
+    /* 按行分布 */
+    flex-direction: row;
+    /* 实现两个nav左右靠边布局 */
+    justify-content: space-between;
+    /* 垂直方向居中 */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(2, 166, 242);
+    color: white;
+    /* 导航栏固定 */
+    position: fixed;
+    top: 0;
+}
+
+/* 导航栏超链接 */
+#nav
+a
+{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+/* 左侧图片 */
+.hd-left>img{
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+/* 右侧链接 */
+.hd-right{
+    width: 320px;
+    line-height: 50px;
+    margin-right: 10px;
+}
+
+/* 对无序列表默认前方原点进行清除，同时设置浮动布局和平均分布使子标签li布局更加合理 */
+.hd-right ul{
+    list-style: none;
+    font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+ 
+    overflow: hidden;
+}
+
+.hd-right ul li {
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    position: relative;
+    /* 防止可能的伪元素溢出的状况 */
+    overflow: hidden;
+}
+
+/* 伪元素实现连接下方蓝色引导条显示消失 */
+.hd-right ul li::after{
+    position: absolute;
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    bottom: 0;
+    background-color: transparent;
+    
+    transition: all 0.3s ease;
+}
+.hd-right ul li:hover::after{
+    /* background-color: deepskyblue; */
+    background-color:  white;
+    width: 20px;
+}
+
+/**************************** 标题 ***********************/
+h1 {
+    margin-left: 15%;
+    color: rgb(2, 166, 242);
+    height: 40px;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+/*************************** 超链接 ***********************/
+a {
+    color: rgb(2, 166, 242);
+    text-decoration: none;
+}
+
+/*************************** 页脚 *************************/
+.footer{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: rgb(2, 166, 242);
+    color: white;
+    /* 固定在底部 */
+    position: fixed;
+    bottom: 0;
+}
+
+/*************************** 主体 ***********************/
+body{
+    margin-top: 30px;
+    /* background-color: #C7EDCC; */
+}
+
+@media (max-width: 767px) { body { padding: 15px; } }
+.markdown-body { 
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;   
+    margin: 0 auto;
+    padding: 45px; 
+    padding-top: 0;
+}
